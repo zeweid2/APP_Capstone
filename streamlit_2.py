@@ -426,8 +426,8 @@ if (indirect_file is not None and direct_file is not None and colname_dict is no
 
                 tab2.write(explanation_text)
         else:
-            X_test['predicted'] = predictions_lr
-            X_test_rejected = X_test[X_test['predicted'] == 1]
+            X_test_scaled['predicted'] = predictions_lr
+            X_test_rejected = X_test_scaled[X_test_scaled['predicted'] == 1]
             X_test_rejected = X_test_rejected.drop(columns = ['predicted'])
             tab2.header("You are currently using: Logistic Regression")
             user_input = {}
